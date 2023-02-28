@@ -27,15 +27,27 @@
     </header>
     <main>
         <button id="AlertButton">Alert</button>
+        <button id="ConfirmButton">Alert</button>
+        <button id="PromptButton">Alert</button>
+        <button id="SafePromptButton">Alert</button>
         <script>
             const alertBtn = document.getElementById("AlertButton");
             alertBtn.addEventListener("click",alertFunc);
+
+            const confirmBtn = docutment.getElementById("ConfirmButton");
+            confirmBtn.addEventListener("click",confirmFunc);
+
+            function confirmFunc()
+            {
+                confirm("Confirm?");
+            }
 
             function alertFunc()
             {
                 alert("Alert!");
             }
         </script>
+        
     </main>
 </body>
 

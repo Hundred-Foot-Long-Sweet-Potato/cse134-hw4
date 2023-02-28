@@ -54,7 +54,7 @@ header{
     position: absolute;
     display:flex;
     justify-content:space-evenly;
-    width:34svh;
+    width:50%;
     color:white;
     font-weight: bold;
     font-size:2svh;
