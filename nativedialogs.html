@@ -74,7 +74,7 @@
                     function myTag(strings,stringRes)
                     {
                         const str = strings[0];
-                        string = DOMPurify.sanitize(stringRes);
+                        stringRes = DOMPurify.sanitize(stringRes);
                         return `${str}${stringRes}`;
                     }
                     let stringRes = prompt("Let's sanitize this!");
