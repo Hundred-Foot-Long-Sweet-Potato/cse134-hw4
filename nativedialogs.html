@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="nativedialogs.js"></script>
 </head>
 <body>
     <header>
@@ -35,18 +36,20 @@
             <button id="SafePromptButton">SafePrompt</button>
 
             <script>
+                //Simply get all the buttons and link them to their approriate functions
                 const alertBtn = document.getElementById("AlertButton");
                 alertBtn.addEventListener("click",alertFunc);
 
                 const confirmBtn = document.getElementById("ConfirmButton");
                 confirmBtn.addEventListener("click",confirmFunc);
-
+                
                 const promptBtn = document.getElementById("PromptButton");
                 promptBtn.addEventListener("click",promptFunc);
 
                 const saferPromptBtn = document.getElementById("SafePromptButton");
                 saferPromptBtn.addEventListener("click", () => alert('Alert!'));
 
+                //Self explanatory functions that simply call a html function and show it
                 function confirmFunc()
                 {
                     var result;
@@ -62,7 +65,7 @@
                 function promptFunc()
                 {
                     let promptRes = prompt("Please enter something!");
-
+                    //Sets a default string if no input is given
                     if (promptRes == null){
                         promptRes = "User didn’t enter anything";
                     }
@@ -71,26 +74,51 @@
 
                 function saferPromptFunc()
                 {
+                    //Tag function
                     function myTag(strings,stringRes)
                     {
                         const str = strings[0];
                         stringRes = DOMPurify.sanitize(stringRes);
+                        //Also sets a default string if nothing is given
+                        if (stringRes == null)
+                        {
+                            stringRes == "User didn't enter aynthing";
+                        }
                         return `${str}${stringRes}`;
                     }
+                    //Makes a variable for myTag to use
                     let stringRes = prompt("Let's sanitize this!");
+                    //Tagged template string
                     const output = myTag`Here is the Sanitized string: ${stringRes}`;
+                    //Showing ouput
                     document.getElementById("saferOutput").innerHTML = output;
                 }
             </script>
         </section>
         <br>
         <section>
-            <h2>Everything else</h2>
+            <h2>Output Results!</h2>
             <p>The value returned by the confirm method is : <output id="confirmOutput"></output></p>
             <p>The value returned by the prompt method is: <ouput id="promptOutput"></ouput></p>
             <p>The value returned by the safer prompt method is: <ouput id="saferOutput"></ouput></p>
         </section>
-        
+        <br>
+        <br>
+        <section>
+            <h2>Custom Dialogs!</h2>
+            <button id="customAlertBtn">Custom Alert</button>
+        </section>
+        <section>
+            <h2>Dialog section</h2>
+            <dialog id="alertDialog">
+                <form method="dialog">
+                    <p>Alert!</p>
+                    <div>
+                        <button value="cancel"></button>
+                    </div>
+                </form>
+            </dialog>
+        </section>
     </main>
 </body>
 
