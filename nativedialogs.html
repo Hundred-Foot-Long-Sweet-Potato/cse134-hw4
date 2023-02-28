@@ -108,9 +108,10 @@
             <h2>Custom Dialogs!</h2>
             <button id="customAlertBtn">Custom Alert</button>
             <button id="customConfirmBtn">Custom Confirm</button>
+            <button id="customPromptBtn">Custom Prompt</button>
         </section>
         <section>
-            <h2>Dialog section</h2>
+            <h2>Custom dialog ouput</h2>
             <dialog id="alertDialog">
                 <form method="dialog">
                     <p>Alert!</p>
@@ -128,10 +129,20 @@
                     </div>
                 </form>
             </dialog>
-        </section>
-        <section>
-            <h2>Custom dialog ouput</h2>
+            <dialog id="promptDialog">
+                <form method="dialog">
+                    <div>
+                        <label for="customPromptVal">Please Input Something I need it...</label>
+                        <input type="text" id="customPromptVal" name="customPromptVal">
+                    </div>
+                    <div>
+                        <button id="promptYes" value="default">Submit</button>
+                        <button id ="promptNo" value="cancel">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
             <p>Confirmed? : <output id="customConfirmOut"></output></p>
+            <p>Prompt Output: <output id="customPromptOut"></output></p>
         </section>
     </main>
 </body>
