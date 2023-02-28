@@ -7,7 +7,6 @@ custmAlert.addEventListener("click", ()=>{
 
 const custmConfirm = document.getElementById("customConfirmBtn");
 const confirmDia = document.getElementById("confirmDialog");
-const outputConfirm = document.getElementById("customConfirmOut");
 const confirmYes = document.getElementById("confirmYes");
 const confirmNo = document.getElementById("confirmNo");
 
@@ -16,9 +15,9 @@ custmConfirm.addEventListener("click", () => {
 })
 
 confirmYes.addEventListener("click", ()=>{
-    outputConfirm.value = "yes";
+    document.getElementById("customConfirmOut").innerHTML = "yes";
 })
 
 confirmNo.addEventListener("click", ()=>{
-    outputConfirm.value="no";
+    document.getElementById("customConfirmOut").innerHTML = "no";
 })
