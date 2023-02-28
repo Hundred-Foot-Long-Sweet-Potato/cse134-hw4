@@ -70,14 +70,14 @@
 
                 function saferPromptFunc()
                 {
-                    function myTag(string)
+                    function myTag(strings,stringRes)
                     {
-                        const str = "Here is the sanitized String!: "
-                        string = DOMPurify.sanitize(string);
-                        return `${str} ${string}`;
+                        const str = strings[0];
+                        string = DOMPurify.sanitize(stringRes);
+                        return `${str}${stringRes}`;
                     }
-                    let response = prompt("Let's sanitize this!");
-                    const output = myTag`${response}`;
+                    let stringRes = prompt("Let's sanitize this!");
+                    const output = myTag`Here is the Sanitized string: ${stringRes}`;
                     document.getElementById("saferOutput").innerHTML = output;
                 }
             </script>
