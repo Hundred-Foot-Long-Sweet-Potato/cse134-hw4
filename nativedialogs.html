@@ -107,6 +107,7 @@
         <section>
             <h2>Custom Dialogs!</h2>
             <button id="customAlertBtn">Custom Alert</button>
+            <button id="customConfirmBtn">Custom Confirm</button>
         </section>
         <section>
             <h2>Dialog section</h2>
@@ -114,9 +115,16 @@
                 <form method="dialog">
                     <p>Alert!</p>
                     <div>
-                        <button value="cancel"></button>
+                        <button value="cancel">Okay</button>
                     </div>
                 </form>
+            </dialog>
+            <dialog id ="confirmDialog">
+                <p>Confirm Please.</p>
+                <div>
+                    <button id="confirmYes" value="default">Sure!</button>
+                    <button value="cancel">No</button>
+                </div>
             </dialog>
         </section>
     </main>
