@@ -77,7 +77,7 @@
                         return `${str} ${string}`;
                     }
 
-                    const output = myTag(prompt("Let's sanitize this!"));
+                    const output = myTag`${prompt("Let's sanitize this!")}`;
                     document.getElementById("saferOutput").innerHTML = output;
                 }
             </script>
