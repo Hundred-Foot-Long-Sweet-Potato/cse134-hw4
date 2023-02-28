@@ -76,8 +76,8 @@
                         string = DOMPurify.sanitize(string);
                         return `${str} ${string}`;
                     }
-
-                    const output = myTag`${prompt("Let's sanitize this!")}`;
+                    let response = prompt("Let's sanitize this!");
+                    const output = myTag`${response}`;
                     document.getElementById("saferOutput").innerHTML = output;
                 }
             </script>
