@@ -32,7 +32,8 @@
             <button id="ConfirmButton">Confirm</button>
             <button id="PromptButton">Prompt</button>
             <button id="SafePromptButton">SafePrompt</button>
-            <script type="text/javascript" src="dist/purify.min.js">
+
+            <script type="text/javascript" src="DOMPURIFY-2.4.4/dist/purify.min.js">
                 const alertBtn = document.getElementById("AlertButton");
                 alertBtn.addEventListener("click",alertFunc);
 
@@ -72,6 +73,7 @@
                     function myTag(string)
                     {
                         const str = "Here is the sanitized String!: "
+                        string = DOMPurify.sanitize(string);
                         return `${str} ${string}`;
                     }
 
