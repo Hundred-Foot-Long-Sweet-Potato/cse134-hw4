@@ -1,0 +1,127 @@
+:root {
+    --border-width: 3px;
+}
+
+*{
+    font-family: 'Roboto Condensed','Roboto', sans-serif;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+h1{
+    font-family: 'Abril Fatface', cursive, cursive;
+    font-size:3.5svh;;
+    color:rgba(0, 0, 0, 0.74);
+    font-weight:bold;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: bisque;
+    padding: 7px;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    border-style: solid;
+
+}
+
+footer{
+    background-color: gray;
+    width: auto;
+    margin-bottom: 0;
+    border: black;
+    border-width: 2px;
+    border-radius: 2px;
+    border-style: solid;
+}
+
+body{
+    margin: 0px;
+}
+
+
+header{
+    position: relative;
+    text-align: center;
+    border-width: var(--border-width);
+    height:15rem;
+    width: auto;
+}
+
+.nav{
+    position: absolute;
+    display:flex;
+    justify-content:space-evenly;
+    width:34svh;
+    color:white;
+    font-weight: bold;
+    font-size:2svh;
+    top:1rem;
+    right:0rem;
+}
+
+.Tech{
+    background-color: gray;
+    border-style: solid;
+    border-color: black;
+    border-width: var(--border-width);
+    border-radius: 4px;
+    width: 85%;
+    height: 60%;
+    justify-self: center;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    gap:10rem;
+    transition: background-color 2s, color 2s,  transform 2s;
+}
+
+.Tech:hover{
+    background-color: white;
+    color: black;
+}
+
+.Tech-Description{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 10px;
+}
+
+#banner-img{
+    height:100%;
+    width: 100%;
+    object-fit:cover;
+}
+
+#who-I-Am{
+    display:flex;
+    flex-direction: row;
+    gap:1em;
+    align-items: center;
+    width: 90%;
+    padding: 2%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#personal-focus{
+    display:flex;
+    flex-direction: row-reverse;
+    gap:1em;
+    align-items: center;
+    width: 90%;
+    padding: 2%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#Tech-I-Know{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    color:white;
+    background-color: rgb(43, 43, 43);
+}

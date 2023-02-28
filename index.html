@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset="utf-8" >
+	<meta name="description" content="Simple demo Web page for CSE 134B" >
+	<meta name="keywords" content="HTML, CSS, JavaScript" >
+	<meta name="author" content="" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<title>Personal Portfolio Website</title>
+    <link href="images/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="images/landscapeImage.jpg" alt="Placeholder art" draggable="false" id="banner-img">
+        <h1>Eric Chen's Portfolio</h1>
+        <nav class="nav">
+            <a href="../index.html" >Home Page</a>
+            <a href="html/Projects.html" >Projects</a>
+            <a href="html/Experiment.html" >Experiment</a>
+        </nav>
+    </header>
+    <main>
+        <h2 style="margin-left: 2.5%; margin-right: 2.5%;">Who I Am</h2>
+        <div id="who-I-Am">
+            <picture>
+                <source media = "(min-width:900px)" srcset="images/MeLarge.jpg" >
+                <source media = "(min-width:700px)" srcset="images/MeMedium.jpg" >
+                <img src="images/MeSmall.jpg" alt="Picture of Me">
+            </picture>
+            <br>
+            <p>Hello, I'm <strong>Eric Chen</strong>! and I am a <span>Passionate</span> programmer. I make programs as a hobby but 
+                while I do stay home at lot due to this hobby I'm also outgoing and have particpated in game jams and other
+                programming events with other strangers in a team.
+            </p>
+        </div>
+        <h2 style="text-align: right; margin-left: 2.5%; margin-right: 2.5%;">Personal Focus</h2>
+        <div id = "personal-focus">
+            <picture>
+                <source media = "(min-width:900px)" srcset="images/Unity.svg" width="200" height="200">
+                <source media = "(min-width:700px)" srcset="images/Unity.svg" width="150" height="150">
+                <img src="images/Unity.svg" alt="Picture of Unity" width="100" height="100">
+            </picture>
+            <br>
+            <p style ="width: 60%;">I focus a lot on <b>Game Development</b> and <b>App developement</b> as I love to create things that interact with the consumer directly!</p>
+        </div>
+        <div id="Tech-I-Know">
+            <h2 style="text-align: left; justify-self: left; padding-left: 2.5%;">Technologies I know</h2>
+            <section class="Tech">
+                <h3>Unity</h3>
+                <div class="Tech-Description">
+                    <picture>
+                        <source media = "(min-width:900px)" srcset="images/Unity.svg" width="200" height="200" draggable="false">
+                        <source media = "(min-width:700px)" srcset="images/Unity.svg" width="150" height="150" draggable="false">
+                        <img src="images/Unity.svg" alt="Unity icon" width="100" height="100" draggable="false">
+                    </picture>
+                    <p>Unity is the main game engine I use nowadays and I focus mainly on it's 2D component. I mainly focus on the scripting side
+                        but since I have tried and made my own game I have experience in all aspects required in making a game in Unity.
+                    </p>
+                </div>
+            </section>
+            <section class = "Tech">
+                <h3>Unreal Engine</h3>
+                <div class="Tech-Description">
+                    <picture>
+                        <source media = "(min-width:900px)" srcset="images/Unreal.svg" width="200" height="200" draggable="false">
+                        <source media = "(min-width:700px)" srcset="images/Unreal.svg" width="150" height="150" draggable="false">
+                        <img src="images/Unreal.svg" alt="Unreal Engine Icon" width="100" height="100" draggable="false">
+                    </picture>
+                    <p>Unreal is the first game engine I really got into and I focused on the 3D side of it. I mainly used Unreal's visual scripting
+                        features to code but since I have knowledge in c++ I can use that as well. While I have prototyped 2 games in Unreal
+                        due to the high barriers required for 3D modeling and animation I eventually gave up on those projects.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <h3>Contacts</h3>
+        <pre>
+            Email: ericchen357@gmail.com
+            Phone: 760-587-9929
+        </pre>
+        <hr>
+        <p>Made By Eric Chen.</p>
+    </footer>
+</body>
+
+</html>

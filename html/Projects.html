@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset="utf-8" />
+	<meta name="description" content="Simple demo Web page for CSE 134B" />
+	<meta name="keywords" content="HTML, CSS, JavaScript" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Personal Portfolio Website</title>
+    <link href="images/favicon.ico" rel="icon" />
+    <style>
+        main {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <canvas id="myCanvas" width="1080" height="200" style="border:1px solid #000000;">
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.font = "30px Arial";
+                ctx.fillText("Eric Chen's Portfolio", 10, 50);
+            </script>
+        </canvas> 
+        <h1>Personal Portfolio</h1>
+        <nav>
+            <a href="../index.html">Home Page</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Experiment.html">Experiment</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Project 1</h2>
+        <img src="sfavicon.ico" alt="Project 1 screenshot or video" width="300" height="500">
+        <p>Description of Project 1 Here</p>
+        <a>Link to Project 1 demonstration here</a>
+        <h2>Project 2</h2>
+        <img src="sfavicon.ico" alt="Project 2 screenshot or video" width="300" height="500">
+        <p>Description of Project 2 Here</p>
+        <a>Link to Project 2 demonstration here</a>
+        <h2>Project 3</h2>
+        <img src="sfavicon.ico" alt="Project 3 screenshot or video" width="300" height="500">
+        <p>Description of Project 3 Here</p>
+        <a>Link to Project 3 demonstration here</a>
+    </main>
+    <footer>
+        <textarea>
+            Made By Eric Chen.
+            With Plenty of tears.
+        </textarea>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset="utf-8" />
+	<meta name="description" content="Simple demo Web page for CSE 134B" />
+	<meta name="keywords" content="HTML, CSS, JavaScript" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Personal Portfolio Website</title>
+    <link href="images/favicon.ico" rel="icon" />
+    <style>
+        main {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <canvas id="myCanvas" width="1080" height="200" style="border:1px solid #000000;">
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.font = "30px Arial";
+                ctx.fillText("Eric Chen's Portfolio", 10, 50);
+            </script>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="blue" />
+            </svg> 
+        </canvas> 
+        <h1>Personal Portfolio</h1>
+        <nav>
+            <a href="../index.html">Home Page <code>button</code></a>
+            <button type="button">Projects</button>
+            <a href="https://ucsd.edu">UCSD</a>
+        </nav>
+    </header>
+    <main>
+        <audio controls>
+            This browser most likely will not have audio.
+        </audio>
+        <video>
+            This page will not have a video (Maybe one for introduction or as a whole currently undecided).
+        </video>
+        <template>
+            <h2>Project Details</h2>
+            <p>Project 1 Description</p>
+        </template>
+        <section>
+            <label for="food"> My favorite foods:</label>
+            <select name="food" id="food">
+                <optgroup label="foods">
+                    <option value="steak">Steak</option>
+                </optgroup>
+                <optgroup label="drinks">
+                    <option value="apple cider">Apple Cider</option>
+                </optgroup>
+            </select>
+        </section>
+        <section>
+            <form>
+                <fieldset>
+                    <legend>To Contact Me</legend>
+                    <label for="Contactee">Name:</label><br>
+                    <input type="text" id="Contactee" name="Contactee">
+                    <input list ="reason" name = "reason" id ="reason">
+                    <datalist id ="reason">
+                        <option value ="recruiter">
+                        <option value ="question">
+                    </datalist>
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <iframe src="www.ucsd.edu" title="I'm not going to use this"></iframe>
+            <h3>Extra stuff for html</h3>
+            <p>A lot of things on this page have 0 use and I will remove from the final product if given the chance to.</p>
+            <table>
+                <tr>
+                    <th>Games I like</th>
+                    <th>Hobbies I have</th>
+                </tr>
+                <tr>
+                    <th>Valorant</th>
+                    <th>Digital Art</th>
+                </tr>
+                <tr>
+                    <th>Hollow Knight</th>
+                    <th>Programming</th>
+                </tr>
+            </table>
+            <table>
+                <caption>Random Garbage Go!</caption>
+                <colgroup>
+                    <col style="background-color: beige;">
+                    <col style="background-color: rosybrown;">
+                </colgroup>
+                <tr>
+                    <td>Potatoes</td>
+                    <td>Apples</td>
+                </tr>
+                <tr>
+                    <td>Love em</td>
+                    <td>Only Honeycrisps are edible</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
