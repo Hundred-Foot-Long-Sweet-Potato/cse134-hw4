@@ -24,20 +24,15 @@ confirmNo.addEventListener("click", ()=>{
 
 const custmPrompt = document.getElementById("customPromptBtn");
 const promptDia = document.getElementById("promptDialog");
-const promptVal = document.getElementById("customPromptVal");
 const confirmSubmit = document.getElementById("promptYes");
 const confirmCancel = document.getElementById("promptNo");
-let output;
+
 custmPrompt.addEventListener("click", () =>{
     promptDia.showModal();
 })
 
-promptVal.addEventListener("change", (e)=>{
-    output = e;
-})
-
 confirmSubmit.addEventListener("click", ()=>{
-    document.getElementById("customPromptOut").innerHTML = output;
+    document.getElementById("customPromptOut").innerHTML = document.getElementById("customPromptVal").value;
 })
 
 confirmCancel.addEventListener("click", ()=>{
