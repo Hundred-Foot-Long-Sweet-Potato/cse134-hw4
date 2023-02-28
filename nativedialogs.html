@@ -26,27 +26,37 @@
         </nav>
     </header>
     <main>
-        <button id="AlertButton">Alert</button>
-        <button id="ConfirmButton">Confirm</button>
-        <button id="PromptButton">Prompt</button>
-        <button id="SafePromptButton">SafePrompt</button>
-        <script>
-            const alertBtn = document.getElementById("AlertButton");
-            alertBtn.addEventListener("click",alertFunc);
+        <section>
+            <h2>The Buttons</h2>
+            <button id="AlertButton">Alert</button>
+            <button id="ConfirmButton">Confirm</button>
+            <button id="PromptButton">Prompt</button>
+            <button id="SafePromptButton">SafePrompt</button>
+            <script>
+                const alertBtn = document.getElementById("AlertButton");
+                alertBtn.addEventListener("click",alertFunc);
 
-            const confirmBtn = document.getElementById("ConfirmButton");
-            confirmBtn.addEventListener("click",confirmFunc);
+                const confirmBtn = document.getElementById("ConfirmButton");
+                confirmBtn.addEventListener("click",confirmFunc);
 
-            function confirmFunc()
-            {
-                confirm("Confirm?");
-            }
+                function confirmFunc()
+                {
+                    var result;
+                    result = confirm("Confirm?");
+                    document.getElementById("confirmOuput").innerHTML = result;
+                }
 
-            function alertFunc()
-            {
-                alert("Alert!");
-            }
-        </script>
+                function alertFunc()
+                {
+                    alert("Alert!");
+                }
+            </script>
+        </section>
+        <br>
+        <section>
+            <h2>Everything else</h2>
+            <p>The value returned by the confirm method is : <output id="confirmOutput"></output></p>
+        </section>
         
     </main>
 </body>
