@@ -39,6 +39,9 @@
                 const confirmBtn = document.getElementById("ConfirmButton");
                 confirmBtn.addEventListener("click",confirmFunc);
 
+                const promptBtn = document.getElementById("PromptButton");
+                promptBtn.addEventListener("click",promptFunc);
+
                 function confirmFunc()
                 {
                     var result;
@@ -50,12 +53,23 @@
                 {
                     alert("Alert!");
                 }
+
+                function promptFunc()
+                {
+                    let promptRes = prompt("Please enter something!");
+
+                    if (promptRes == null){
+                        promptRes = "User didn’t enter anything";
+                    }
+                    document.getElementById("promptOuput").innerHTML = promptRes;
+                }
             </script>
         </section>
         <br>
         <section>
             <h2>Everything else</h2>
             <p>The value returned by the confirm method is : <output id="confirmOutput"></output></p>
+            <p>The value returned by the prompt method is: <ouput id="promptOutput"></ouput></p>
         </section>
         
     </main>
