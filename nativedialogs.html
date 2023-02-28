@@ -120,12 +120,18 @@
                 </form>
             </dialog>
             <dialog id ="confirmDialog">
-                <p>Confirm Please.</p>
-                <div>
-                    <button id="confirmYes" value="default">Sure!</button>
-                    <button value="cancel">No</button>
-                </div>
+                <form>
+                    <p>Confirm Please.</p>
+                    <div>
+                        <button id="confirmYes" value="default">Sure!</button>
+                        <button id ="confirmNo" value="cancel">No</button>
+                    </div>
+                </form>
             </dialog>
+        </section>
+        <section>
+            <h2>Custom dialog ouput</h2>
+            <p>Confirmed? : <output id="customConfirmOut"></output></p>
         </section>
     </main>
 </body>
