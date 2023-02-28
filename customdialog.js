@@ -1,10 +1,11 @@
-
+//Custom Alert Logic
 const custmAlert = document.getElementById("customAlertBtn");
 const alertDia = document.getElementById("alertDialog");
 custmAlert.addEventListener("click", ()=>{
     alertDia.showModal();
 })
 
+//Custom confirm logic (1 event to show and 2 events to decide result)
 const custmConfirm = document.getElementById("customConfirmBtn");
 const confirmDia = document.getElementById("confirmDialog");
 const confirmYes = document.getElementById("confirmYes");
@@ -22,6 +23,7 @@ confirmNo.addEventListener("click", ()=>{
     document.getElementById("customConfirmOut").innerHTML = "no";
 })
 
+//Custom prompt logic (1 event to show and 2 events to decide result)
 const custmPrompt = document.getElementById("customPromptBtn");
 const promptDia = document.getElementById("promptDialog");
 const confirmSubmit = document.getElementById("promptYes");
