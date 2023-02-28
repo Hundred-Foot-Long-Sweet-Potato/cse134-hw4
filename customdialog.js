@@ -34,7 +34,8 @@ custmPrompt.addEventListener("click", () =>{
 })
 
 confirmSubmit.addEventListener("click", ()=>{
-    document.getElementById("customPromptOut").innerHTML = document.getElementById("customPromptVal").value;
+    let out = DOMPurify.sanitize(document.getElementById("customPromptVal").value);
+    document.getElementById("customPromptOut").innerHTML = out;
 })
 
 confirmCancel.addEventListener("click", ()=>{
