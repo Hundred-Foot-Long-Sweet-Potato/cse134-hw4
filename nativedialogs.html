@@ -32,7 +32,7 @@
             <button id="ConfirmButton">Confirm</button>
             <button id="PromptButton">Prompt</button>
             <button id="SafePromptButton">SafePrompt</button>
-            <script>
+            <script type="text/javascript" src="dist/purify.min.js">
                 const alertBtn = document.getElementById("AlertButton");
                 alertBtn.addEventListener("click",alertFunc);
 
@@ -41,6 +41,9 @@
 
                 const promptBtn = document.getElementById("PromptButton");
                 promptBtn.addEventListener("click",promptFunc);
+
+                const saferPromptBtn = document.getElementById("SafePromptButton");
+                saferPromptBtn.addEventListener("click", saferPromptFunc);
 
                 function confirmFunc()
                 {
@@ -63,6 +66,18 @@
                     }
                     document.getElementById("promptOutput").innerHTML = promptRes;
                 }
+
+                function saferPromptFunc()
+                {
+                    function myTag(string)
+                    {
+                        const str = "Here is the sanitized String!: "
+                        return `${str} ${string}`;
+                    }
+
+                    const output = myTag(prompt("Let's sanitize this!"));
+                    document.getElementById("saferOutput").innerHTML = output;
+                }
             </script>
         </section>
         <br>
@@ -70,6 +85,7 @@
             <h2>Everything else</h2>
             <p>The value returned by the confirm method is : <output id="confirmOutput"></output></p>
             <p>The value returned by the prompt method is: <ouput id="promptOutput"></ouput></p>
+            <p>The value returned by the safer prompt method is: <ouput id="saferOutput"></ouput></p>
         </section>
         
     </main>
