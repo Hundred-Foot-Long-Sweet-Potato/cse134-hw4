@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset="utf-8" >
+	<meta name="description" content="Simple demo Web page for CSE 134B" >
+	<meta name="keywords" content="HTML, CSS, JavaScript" >
+	<meta name="author" content="" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<title>Personal Portfolio Website</title>
+    <link href="images/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script type="module" src="../js/blog.js"></script>
+</head>
+<body>
+    <header>
+        <img src="images/landscapeImage.jpg" alt="Placeholder art" draggable="false" id="banner-img">
+        <h1>Eric Chen's Portfolio</h1>
+        <nav class="nav">
+            <a href="../index.html" >Home Page</a>
+            <a href="html/Projects.html" >Projects</a>
+            <a href="html/Experiment.html" >Experiment</a>
+            <a href="nativedialogs.html"> nativedialogs</a>
+            <a href="crud.html"> crud</a>
+        </nav>
+    </header>
+    <main>
+        <h1>BLOG</h1>
+        <button id="postCreate">Create new Blog Post!</button>
+        <template class="templateBlog">
+            <section>
+                <h2><output class="blogTitle"></output></h2>
+                <p><output class="blogDate"></output></p>
+                <p><output class="blogSummary"></output></p>
+                <div>
+                    <button class="blogEdit">Edit</button>
+                    <button class="blogDelete">Delete</button>
+                </div>
+            </section>
+        </template>
+    </main>
+</body>
+
+</html>
