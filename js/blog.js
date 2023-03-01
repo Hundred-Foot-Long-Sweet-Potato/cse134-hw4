@@ -41,7 +41,7 @@ function createBlogPost()
     clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog)});
     clon.getElementById("blogEdit").addEventListener("click",()=>{
         editBlogPost();
-        targetEditBlog = clon;
+        targetEditBlog = currBlog;
     });
     //Append 
     document.body.appendChild(clon);
@@ -71,7 +71,9 @@ function editBlogPost()
 
 function confirmEdit()
 {
-    targetEditBlog.getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
-    targetEditBlog.getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
-    targetEditBlog.getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
+    //Find correct section
+    let target = document.getElementsByTagName("section")[targetEditBlog.blogNum];
+    target.getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
+    target.getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
+    target.getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
 }
