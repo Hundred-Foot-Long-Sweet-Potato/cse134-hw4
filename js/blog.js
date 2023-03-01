@@ -52,6 +52,7 @@ function deleteBlogPost(target)
 {
     let targetNum = target.blogNum;
     //Remove the section in question
+    console.log(targetNum);
     document.getElementsByTagName("section")[targetNum].remove();
     //Remove blog from array
     blogs.splice(blogs.indexOf(target),1);
