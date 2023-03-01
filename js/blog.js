@@ -29,6 +29,7 @@ let targetEditBlog;
 //Onload function
 window.onload = function(){
     let numBlogs = localStorage.getItem("NumBlogs");
+    if (numBlogs == null) return;
     for (let i = 0; i < numBlogs * 3;i++)
     {
         //Get blog data
@@ -53,6 +54,7 @@ window.onbeforeunload = function(){
     //Store all of blogs
     for (let i =0; i < blogs.length * 3;i++)
     {
+        console.log(blogs[i].title);
         //Store blog data
         localStorage.setItem(i,blogs[i].title);
         localStorage.setItem(i+1,blogs[i].date);
