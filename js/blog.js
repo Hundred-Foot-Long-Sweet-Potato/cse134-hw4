@@ -27,12 +27,9 @@ function createBlogPost()
     clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
     clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
     //Link this blog posts button with itself
-    let blogNum = counter;
-    blogs.push(clon);
-    counter++;
+    clon.getElementById("blogDelete").addEventListener("click",()=>{clon.parentNode.removeChild(clon);});
     //Append 
     document.body.appendChild(clon);
-    clon.getElementById("blogDelete").addEventListener("click",()=>{document.body.removeChild(clon);});
 }
 
 function deleteBlogPost(target)
