@@ -76,7 +76,7 @@ header{
     margin-bottom: 3%;
     font-size: 0;
     gap:10rem;
-    transition: width 1.5s, color 2s,font-size 2s;
+    transition: width 1.5s, color 7s,font-size 2s;
 }
 
 .Tech:hover{
