@@ -29,28 +29,35 @@ let targetEditBlog;
 //Onload function
 window.onload = function(){
     let numBlogs = localStorage.getItem("NumBlogs");
-    for (let i = 0; i < numBlogs;i++)
+    for (let i = 0; i < numBlogs * 3;i++)
     {
-        //Append each blog to page and blogs array
-        let blogEle = localStorage.getItem(i);
+        //Get blog data
+        let title = localStorage.getItem(i);
+        let date = localStorage.getItem(i+1);
+        let summary = localStorage.getItem(i+2);
+        i += 2;
         //Create and update
         var temp = document.getElementsByTagName("template")[0];
         var clon = temp.content.cloneNode(true);
-        clon.getElementById("blogTitle").innerHTML = blogEle.title;
-        clon.getElementById("blogDate").innerHTML = blogEle.date;
-        clon.getElementById("blogSummary").innerHTML = blogEle.summary;
+        clon.getElementById("blogTitle").innerHTML = title;
+        clon.getElementById("blogDate").innerHTML = date;
+        clon.getElementById("blogSummary").innerHTML = summary;
         document.body.appendChild(clon);
-        blogs.push(blogEle);
+        let currBlog = new blog(i,title,date,summary);
+        blogs.push(currBlog);
     }
 }
 
 //OnExit function
 window.onbeforeunload = function(){
     //Store all of blogs
-    for (let i =0; i < blogs.length;i++)
+    for (let i =0; i < blogs.length * 3;i++)
     {
-        localStorage.setItem(i,blogs[i]);
-        console.log(`Unloading ${blogs[i]}`);
+        //Store blog data
+        localStorage.setItem(i,blogs[i].title);
+        localStorage.setItem(i+1,blogs[i].date);
+        localStorage.setItem(i+2,blogs[i].summary);
+        i += 2;
     }
     //Store num of blogs
     localStorage.setItem("NumBlogs",blogs.length);
