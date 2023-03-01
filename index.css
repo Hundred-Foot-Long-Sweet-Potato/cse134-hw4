@@ -89,6 +89,12 @@ header{
     flex-direction: row;
     gap: 2rem;
     padding: 10px;
+    font-size: 0px;
+    transition: font-size 3s;
+}
+
+.Tech-Description:hover{
+    font-size: 1rem;
 }
 
 .Tech-Paragraph{
