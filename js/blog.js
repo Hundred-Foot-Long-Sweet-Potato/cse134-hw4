@@ -73,7 +73,9 @@ function confirmEdit()
 {
     //Find correct section
     let target = document.getElementsByTagName("section")[targetEditBlog.blogNum];
-    target.getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
-    target.getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
-    target.getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
+    let children = target.childNodes;
+    console.log(children);
+    children[0].getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
+    children[1].getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
+    children[2].getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
 }
