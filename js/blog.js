@@ -40,7 +40,7 @@ function deleteBlogPost(blogNum)
     //Remove the section in question
     document.getElementsByTagName("section")[blogNum].remove();
     //Update all blogNums
-    for (let i = 0; i < blogs.size();i++)
+    for (let i = 0; i < blogs.length;i++)
     {
         if (i < blogNum) continue;
         blogs[i].blogNum--;
