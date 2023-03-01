@@ -30,7 +30,7 @@ function createBlogPost()
     let blogNum = counter;
     blogs.push(clon);
     counter++;
-    clon.getElementById("blogDelete").addEventListener("click",()=>{clon.remove();});
+    clon.getElementById("blogDelete").addEventListener("click",()=>{document.body.removeChild(clon);});
     //Append 
     document.body.appendChild(clon);
 }
