@@ -24,9 +24,10 @@ window.onload = function(){
     for (let i = 0; i < numBlogs;i++)
     {
         //Append each blog to page and blogs array
-        let blog = localStorage.getItem(i);
-        document.body.appendChild(blog.blogElement);
-        blogs.push(blog);
+        let blogEle = localStorage.getItem(i);
+        console.log(blogEle);
+        document.body.appendChild(blogEle.blogElement);
+        blogs.push(blogEle);
     }
 }
 
@@ -36,6 +37,7 @@ window.onbeforeunload = function(){
     for (let i =0; i < blogs.length;i++)
     {
         localStorage.setItem(i,blogs[i]);
+        console.log(blogs[i]);
     }
     //Store num of blogs
     localStorage.setItem("NumBlogs",blogs.length);
