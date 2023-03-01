@@ -43,7 +43,7 @@ window.onload = function(){
         clon.getElementById("blogTitle").innerHTML = title;
         clon.getElementById("blogDate").innerHTML = date;
         clon.getElementById("blogSummary").innerHTML = summary;
-        let currBlog = new blog(i,title,date,summary);
+        let currBlog = new blog(Math.floor(i/3),title,date,summary);
         counter++;
         clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog)});
         clon.getElementById("blogEdit").addEventListener("click",()=>{
