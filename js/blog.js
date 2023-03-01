@@ -3,6 +3,8 @@ const blogCreate = document.getElementById("postCreate");
 blogCreate.addEventListener("click", blogPopUp);
 const blogDia = document.getElementById("blogCreateDialog");
 const editDia = document.getElementById("blogEditDialog");
+const editConfirm = document.getElementById("editSubmit");
+editConfirm.addEventListener("click",confirmEdit);
 const blogConfirm = document.getElementById("blogCreate");
 blogConfirm.addEventListener("click",createBlogPost);
 
@@ -14,7 +16,7 @@ class blog{
 //Javascript array with all blogs
 let blogs = [];
 let counter = 0;
-
+let targetEditBlog;
 //Pop up to get details
 function blogPopUp()
 {
@@ -37,7 +39,7 @@ function createBlogPost()
     blogs.push(currBlog);
     //Link this blog posts button with itself
     clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog)});
-    clon.getElementById("blogEdit").addEventListener("click",()=>{editBlogPost(clon)})
+    clon.getElementById("blogEdit").addEventListener("click",()=>{targetEditBlog = clon});
     //Append 
     document.body.appendChild(clon);
 }
@@ -58,12 +60,15 @@ function deleteBlogPost(target)
     }
 }
 
-function editBlogPost(target)
+function editBlogPost()
 {
     //Show up the form again
     editDia.showModal();
-    //Update values (Do not do any appending or cloning)
-    target.getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
-    target.getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
-    target.getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
+}
+
+function confirmEdit()
+{
+    targetEditBlog.getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
+    targetEditBlog.getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
+    targetEditBlog.getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
 }
