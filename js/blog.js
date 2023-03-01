@@ -27,12 +27,13 @@ function createBlogPost()
     clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
     clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
     //Link this blog posts button with itself
-    clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(clon)});
+    let blogNum = counter;
+    clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(blogNum)});
     //Append 
     document.body.appendChild(clon);
 }
 
-function deleteBlogPost(blog)
+function deleteBlogPost(blogNum)
 {
-    blog.remove();
+    document.getElementsByTagName("section")[blogNum].remove();
 }
