@@ -9,8 +9,17 @@ const blogConfirm = document.getElementById("blogCreate");
 blogConfirm.addEventListener("click",createBlogPost);
 
 class blog{
-    constructor(blogNum){
+    constructor(blogNum,title,date,sum){
         this.blogNum = blogNum;
+        this.title = title;
+        this.date = date;
+        this.sum = sum;
+    }
+    update(title,date,sum)
+    {
+        this.title = title;
+        this.date = date;
+        this.sum = sum;
     }
 }
 //Javascript array with all blogs
@@ -32,10 +41,13 @@ function createBlogPost()
     var clon = temp.content.cloneNode(true);
     //Fill details in template
     //CURRENTLY USING ID HERE -> Probably isn't an issue since it's currently not attached to doc?
-    clon.getElementById("blogTitle").innerHTML = document.getElementById("diaTitle").value;
-    clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
-    clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
-    let currBlog = new blog(counter);
+    let title = document.getElementById("diaTitle").value;
+    let date = document.getElementById("diaDate").value;
+    let summary = document.getElementById("diaSummary").value;
+    clon.getElementById("blogTitle").innerHTML = title;
+    clon.getElementById("blogDate").innerHTML = date;
+    clon.getElementById("blogSummary").innerHTML = summary;
+    let currBlog = new blog(counter,title,date,summary);
     counter++;
     blogs.push(currBlog);
     //Link this blog posts button with itself
@@ -75,7 +87,12 @@ function confirmEdit()
 {
     //Find correct section
     //Switched to class here because ID obviously doesn't work when there is like 5 of them
-    document.getElementsByClassName("blogTitle")[targetEditBlog.blogNum].innerHTML = document.getElementById("editTitle").value;
-    document.getElementsByClassName("blogDate")[targetEditBlog.blogNum].innerHTML = document.getElementById("editDate").value;
-    document.getElementsByClassName("blogSummary")[targetEditBlog.blogNum].innerHTML = document.getElementById("editSummary").value;
+    let title = document.getElementById("editTitle").value;
+    let date = document.getElementById("editDate").value;
+    let summary = document.getElementById("editSummary").value;
+    document.getElementsByClassName("blogTitle")[targetEditBlog.blogNum].innerHTML = title;
+    document.getElementsByClassName("blogDate")[targetEditBlog.blogNum].innerHTML = date;
+    document.getElementsByClassName("blogSummary")[targetEditBlog.blogNum].innerHTML = summary;
+    targetEditBlog.update(title,date,summary);
+    console.log(blogs);
 }
