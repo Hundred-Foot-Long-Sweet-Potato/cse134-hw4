@@ -21,6 +21,6 @@ function createBlogPost()
     var temp = document.getElementsByTagName("template")[0];
     var clon = temp.content.cloneNode(true);
     //Fill details in template
-    clon.getElementById("blogTitle").innerHTML = "Test";
+    clon.getElementById("blogTitle").innerHTML = document.getElementById("diaTitle").value;
     document.body.appendChild(clon);
 }
