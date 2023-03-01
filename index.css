@@ -91,12 +91,11 @@ header{
     flex-direction: row;
     gap: 2rem;
     padding: 10px;
-    font-size: 0px;
 }
 
 #Tech-Title{
     display: block;
-    font-size: 1.17em;
+    font-size: 1.17em !important;
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 0;
