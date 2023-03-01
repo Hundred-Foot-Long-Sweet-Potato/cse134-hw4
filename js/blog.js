@@ -60,11 +60,11 @@ window.onbeforeunload = function(){
     //Store all of blogs
     for (let i =0; i < blogs.length * 3;i++)
     {
-        console.log(blogs[i].title);
+        console.log(blogs[Math.floor(i/3)].title);
         //Store blog data
-        localStorage.setItem(i,blogs[i].title);
-        localStorage.setItem(i+1,blogs[i].date);
-        localStorage.setItem(i+2,blogs[i].summary);
+        localStorage.setItem(i,blogs[Math.floor(i/3)].title);
+        localStorage.setItem(i+1,blogs[Math.floor(i/3)].date);
+        localStorage.setItem(i+2,blogs[Math.floor(i/3)].summary);
         i += 2;
     }
     //Store num of blogs
