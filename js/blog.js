@@ -25,7 +25,7 @@ window.onload = function(){
     {
         //Append each blog to page and blogs array
         let blog = localStorage.getItem(i);
-        document.body.appendChild(blog);
+        document.body.appendChild(blog.blogElement);
         blogs.push(blog);
     }
 }
