@@ -18,11 +18,9 @@ function createBlogPost()
 {
     //W3School Code example for html template
     //Simply gets the template -> creates a clone -> adds clone to document (Always [0] here for create)
-    var temp = document.getElementsByClassName("templateBlog")[0];
+    var temp = document.getElementsByTagName("template")[0];
     var clon = temp.content.cloneNode(true);
+    //Fill details in template
+    clon.getElementById("blogTitle") = "Test";
     document.body.appendChild(clon);
-    //Fill details of template
-    document.getElementsByClassName("blogTitle")[0].innerHTML = document.getElementsByClassName("diaTitle")[0].value;
-    document.getElementsByClassName("blogDate")[0].innerHTML = document.getElementsByClassName("diaDate")[0].value;
-    document.getElementsByClassName("blogSummary")[0].innerHTML = document.getElementsByClassName("diaSummary")[0].value;
 }
