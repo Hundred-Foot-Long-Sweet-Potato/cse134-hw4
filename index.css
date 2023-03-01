@@ -68,18 +68,20 @@ header{
     border-color: black;
     border-width: var(--border-width);
     border-radius: 4px;
+    color:white;
     width: 15%;
     height: 50%;
     justify-self: center;
     margin-left: 5%;
     margin-bottom: 3%;
     gap:10rem;
-    transition: width 2s, height 2s,  transform 2s;
+    transition: width 2s, height 2s,  transform 2s, color 3s;
 }
 
 .Tech:hover{
     width: 85%;
     height: 60%;
+    color:black;
 }
 
 .Tech-Description{
@@ -90,7 +92,6 @@ header{
 }
 
 .Tech-Paragraph{
-    color:black;
     display:none;
 }
 

@@ -89,11 +89,12 @@
 
                 techClass1.addEventListener("mouseover", ()=>{expandTech(techDesc1)});
                 techClass2.addEventListener("mouseover", ()=>{expandTech(techDesc2)});
-                techClass1.addEventListener("mouseoff", ()=>{hideTech(techDesc1)});
-                techClass2.addEventListener("mouseoff", ()=>{hideTech(techDesc2)});
+                techClass1.addEventListener("mouseout", ()=>{hideTech(techDesc1)});
+                techClass2.addEventListener("mouseout", ()=>{hideTech(techDesc2)});
 
                 function expandTech(techBlock)
                 {
+                    await(2000);
                     techBlock.style.display='block';
                 }
                 function hideTech(techBlock)
