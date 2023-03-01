@@ -63,23 +63,24 @@ header{
 }
 
 .Tech{
-    background-color: gray;
+    background-color: white;
     border-style: solid;
     border-color: black;
     border-width: var(--border-width);
     border-radius: 4px;
-    width: 85%;
+    width: 25%;
     height: 60%;
     justify-self: center;
     margin-left: 5%;
     margin-bottom: 3%;
     gap:10rem;
-    transition: background-color 2s, color 2s,  transform 2s;
+    display:none;
+    transition: width 2s,  transform 2s;
 }
 
 .Tech:hover{
     background-color: white;
-    color: black;
+    width: 85%;
 }
 
 .Tech-Description{

@@ -81,6 +81,26 @@
                     </p>
                 </div>
             </section>
+            <script>
+                const techClass1 = document.getElementsByClassName("Tech")[0];
+                const techClass2 = document.getElementsByClassName("Tech")[1];
+                const techDesc1 = document.getElementsByClassName("Tech-Description")[0];
+                const techDesc2 = document.getElementsByClassName("Tech-Description")[1];
+
+                techClass1.addEventListener("mouseover", ()=>{expandTech(techClass1)});
+                techClass2.addEventListener("mouseover", ()=>{expandTech(techClass2)});
+                techClass1.addEventListener("mouseoff", ()=>{expandTech(techClass1)});
+                techClass2.addEventListener("mouseoff", ()=>{expandTech(techClass2)});
+
+                function expandTech(techBlock)
+                {
+                    techBlock.style.display='block';
+                }
+                function hideTech(techBlock)
+                {
+                    techBlock.style.display='none';
+                }
+            </script>
         </div>
     </main>
     <footer>
