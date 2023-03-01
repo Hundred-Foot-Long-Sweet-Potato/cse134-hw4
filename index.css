@@ -74,7 +74,6 @@ header{
     margin-left: 5%;
     margin-bottom: 3%;
     gap:10rem;
-    display:none;
     transition: width 2s,  transform 2s;
 }
 
@@ -88,6 +87,10 @@ header{
     flex-direction: row;
     gap: 2rem;
     padding: 10px;
+}
+
+.Tech-Paragraph{
+    display:none;
 }
 
 #banner-img{
