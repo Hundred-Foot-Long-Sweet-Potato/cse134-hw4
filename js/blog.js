@@ -9,11 +9,9 @@ const blogConfirm = document.getElementById("blogCreate");
 blogConfirm.addEventListener("click",createBlogPost);
 
 class blog{
-    constructor(blogNum,title,date,sum){
+    constructor(blogNum,blogElement){
         this.blogNum = blogNum;
-        this.title = title;
-        this.date = date;
-        this.sum = sum;
+        this.blogElement = blogElement;
     }
     update(title,date,sum)
     {
@@ -47,7 +45,7 @@ function createBlogPost()
     clon.getElementById("blogTitle").innerHTML = title;
     clon.getElementById("blogDate").innerHTML = date;
     clon.getElementById("blogSummary").innerHTML = summary;
-    let currBlog = new blog(counter,title,date,summary);
+    let currBlog = new blog(counter,clon);
     counter++;
     blogs.push(currBlog);
     //Link this blog posts button with itself
@@ -58,6 +56,7 @@ function createBlogPost()
     });
     //Append 
     document.body.appendChild(clon);
+    console.log(blogs);
 }
 
 function deleteBlogPost(target)
@@ -75,6 +74,7 @@ function deleteBlogPost(target)
         if (i < targetNum) continue;
         blogs[i].blogNum--;
     }
+    console.log(blogs);
 }
 
 function editBlogPost()
@@ -93,6 +93,5 @@ function confirmEdit()
     document.getElementsByClassName("blogTitle")[targetEditBlog.blogNum].innerHTML = title;
     document.getElementsByClassName("blogDate")[targetEditBlog.blogNum].innerHTML = date;
     document.getElementsByClassName("blogSummary")[targetEditBlog.blogNum].innerHTML = summary;
-    targetEditBlog.update(title,date,summary);
     console.log(blogs);
 }
