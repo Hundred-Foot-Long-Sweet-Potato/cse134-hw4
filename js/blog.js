@@ -37,7 +37,7 @@ function createBlogPost()
     blogs.push(currBlog);
     //Link this blog posts button with itself
     clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog)});
-    clon.getElementById("blogEdit").addEventListener("click",()=>{editBlogPost(currBlog)})
+    clon.getElementById("blogEdit").addEventListener("click",()=>{editBlogPost(clon)})
     //Append 
     document.body.appendChild(clon);
 }
