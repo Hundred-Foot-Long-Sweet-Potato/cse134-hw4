@@ -47,6 +47,7 @@ function deleteBlogPost(target)
     document.getElementsByTagName("section")[targetNum].remove();
     //Remove blog from array
     blogs.splice(blogs.indexOf(target),1);
+    counter--;
     //Update all blogNums
     for (let i = 0; i < blogs.length;i++)
     {   
