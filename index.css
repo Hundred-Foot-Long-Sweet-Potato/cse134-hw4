@@ -76,12 +76,11 @@ header{
     margin-bottom: 3%;
     font-size: 0;
     gap:10rem;
-    transition: width 2s, height 2s,  transform 2s, color 3s,font-size 3s;
+    transition: width 1.5s, color 2s,font-size 2s;
 }
 
 .Tech:hover{
     width: 85%;
-    height: 60%;
     color:black;
     font-size: 1rem;
 }
@@ -91,16 +90,6 @@ header{
     flex-direction: row;
     gap: 2rem;
     padding: 10px;
-}
-
-#Tech-Title{
-    display: block;
-    font-size: 1.17em !important;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
 }
 
 .Tech-Paragraph{
