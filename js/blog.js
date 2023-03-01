@@ -36,6 +36,7 @@ function createBlogPost()
     blogs.push(currBlog);
     //Link this blog posts button with itself
     clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog)});
+    clon.getElementById("blogEdit").addEventListener("click",()=>{editBlogPost(currBlog)})
     //Append 
     document.body.appendChild(clon);
 }
@@ -54,9 +55,14 @@ function deleteBlogPost(target)
         if (i < targetNum) continue;
         blogs[i].blogNum--;
     }
-    //Console.log
-    for (let i = 0; i < blogs.length;i++)
-    {   
-        console.log(blogs[i].blogNum);
-    }
+}
+
+function editBlogPost(target)
+{
+    //Show up the form again
+    blogDia.showModal();
+    //Update values (Do not do any appending or cloning)
+    clon.getElementById("blogTitle").innerHTML = document.getElementById("diaTitle").value;
+    clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
+    clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
 }
