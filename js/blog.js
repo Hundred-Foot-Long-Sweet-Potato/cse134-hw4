@@ -9,9 +9,17 @@ const blogConfirm = document.getElementById("blogCreate");
 blogConfirm.addEventListener("click",createBlogPost);
 
 class blog{
-    constructor(blogNum,blogElement){
+    constructor(blogNum,title,date,summary){
         this.blogNum = blogNum;
-        this.blogElement = blogElement;
+        this.title = title;
+        this.date = date;
+        this.summary = summary;
+    }
+    update(title,date,summary)
+    {
+        this.title = title;
+        this.date = date;
+        this.summary = summary;
     }
 }
 //Javascript array with all blogs
@@ -25,8 +33,13 @@ window.onload = function(){
     {
         //Append each blog to page and blogs array
         let blogEle = localStorage.getItem(i);
-        console.log(blogEle);
-        document.body.appendChild(blogEle.blogElement);
+        //Create and update
+        var temp = document.getElementsByTagName("template")[0];
+        var clon = temp.content.cloneNode(true);
+        clon.getElementById("blogTitle").innerHTML = blogEle.title;
+        clon.getElementById("blogDate").innerHTML = blogEle.date;
+        clon.getElementById("blogSummary").innerHTML = blogEle.summary;
+        document.body.appendChild(clon);
         blogs.push(blogEle);
     }
 }
@@ -37,7 +50,7 @@ window.onbeforeunload = function(){
     for (let i =0; i < blogs.length;i++)
     {
         localStorage.setItem(i,blogs[i]);
-        console.log(blogs[i]);
+        console.log(`Unloading ${blogs[i]}`);
     }
     //Store num of blogs
     localStorage.setItem("NumBlogs",blogs.length);
@@ -64,7 +77,7 @@ function createBlogPost()
     clon.getElementById("blogTitle").innerHTML = title;
     clon.getElementById("blogDate").innerHTML = date;
     clon.getElementById("blogSummary").innerHTML = summary;
-    let currBlog = new blog(counter,clon);
+    let currBlog = new blog(counter,title,date,summary);
     counter++;
     blogs.push(currBlog);
     //Link this blog posts button with itself
@@ -93,7 +106,6 @@ function deleteBlogPost(target)
         if (i < targetNum) continue;
         blogs[i].blogNum--;
     }
-    localStorage.removeItem(target);
     console.log(blogs);
 }
 
@@ -113,5 +125,6 @@ function confirmEdit()
     document.getElementsByClassName("blogTitle")[targetEditBlog.blogNum].innerHTML = title;
     document.getElementsByClassName("blogDate")[targetEditBlog.blogNum].innerHTML = date;
     document.getElementsByClassName("blogSummary")[targetEditBlog.blogNum].innerHTML = summary;
+    targetEditBlog.update(title,date,summary);
     console.log(blogs);
 }
