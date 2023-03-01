@@ -78,7 +78,6 @@ header{
 }
 
 .Tech:hover{
-    background-color: white;
     width: 85%;
     height: 60%;
 }
@@ -91,6 +90,7 @@ header{
 }
 
 .Tech-Paragraph{
+    color:black;
     display:none;
 }
 
