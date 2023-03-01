@@ -92,9 +92,17 @@
                 techClass1.addEventListener("mouseout", ()=>{hideTech(techDesc1)});
                 techClass2.addEventListener("mouseout", ()=>{hideTech(techDesc2)});
 
+                function resolve2Seconds()
+                {
+                    return new Promise(resolve =>{
+                        setTimeout(()=>{
+                            resolve('resolved');
+                        },2000)
+                    })
+                }
                 async function expandTech(techBlock)
                 {
-                    await(2000);
+                    await resolve2Seconds();
                     techBlock.style.display='block';
                 }
                 function hideTech(techBlock)
