@@ -35,14 +35,19 @@ function createBlogPost()
     document.body.appendChild(clon);
 }
 
-function deleteBlogPost(blogNum)
+function deleteBlogPost(target)
 {
     //Remove the section in question
-    document.getElementsByTagName("section")[blogNum].remove();
+    document.getElementsByTagName("section")[target].remove();
     //Update all blogNums
     for (let i = 0; i < blogs.length;i++)
-    {
-        if (i < blogNum) continue;
+    {   
+        if (i < target) continue;
         blogs[i].blogNum--;
+    }
+    //Console.log
+    for (let i = 0; i < blogs.length;i++)
+    {   
+        console.log(blogs[i].blogNum);
     }
 }
