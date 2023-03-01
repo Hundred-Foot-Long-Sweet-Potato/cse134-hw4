@@ -31,6 +31,7 @@ function createBlogPost()
     var temp = document.getElementsByTagName("template")[0];
     var clon = temp.content.cloneNode(true);
     //Fill details in template
+    //CURRENTLY USING ID HERE -> Probably isn't an issue since it's currently not attached to doc?
     clon.getElementById("blogTitle").innerHTML = document.getElementById("diaTitle").value;
     clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
     clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
@@ -72,8 +73,8 @@ function editBlogPost()
 function confirmEdit()
 {
     //Find correct section
+    //Switched to class here because ID obviously doesn't work when there is like 5 of them
     document.getElementsByClassName("blogTitle")[targetEditBlog.blogNum].innerHTML = document.getElementById("editTitle").value;
-    // children[0].getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
-    // children[1].getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
-    // children[2].getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
+    document.getElementsByClassName("blogDate")[targetEditBlog.blogNum].innerHTML = document.getElementById("editDate").value;
+    document.getElementsByClassName("blogSummary")[targetEditBlog.blogNum].innerHTML = document.getElementById("editSummary").value;
 }
