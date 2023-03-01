@@ -2,6 +2,7 @@
 const blogCreate = document.getElementById("postCreate");
 blogCreate.addEventListener("click", blogPopUp);
 const blogDia = document.getElementById("blogCreateDialog");
+const editDia = document.getElementById("blogEditDialog");
 const blogConfirm = document.getElementById("blogCreate");
 blogConfirm.addEventListener("click",createBlogPost);
 
@@ -60,9 +61,9 @@ function deleteBlogPost(target)
 function editBlogPost(target)
 {
     //Show up the form again
-    blogDia.showModal();
+    editDia.showModal();
     //Update values (Do not do any appending or cloning)
-    clon.getElementById("blogTitle").innerHTML = document.getElementById("diaTitle").value;
-    clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
-    clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
+    target.getElementById("blogTitle").innerHTML = document.getElementById("editTitle").value;
+    target.getElementById("blogDate").innerHTML = document.getElementById("editDate").value;
+    target.getElementById("blogSummary").innerHTML = document.getElementById("editSummary").value;
 }
