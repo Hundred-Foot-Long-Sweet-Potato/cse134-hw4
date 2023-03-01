@@ -35,19 +35,22 @@ function createBlogPost()
     counter++;
     blogs.push(currBlog);
     //Link this blog posts button with itself
-    clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog.blogNum)});
+    clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog)});
     //Append 
     document.body.appendChild(clon);
 }
 
 function deleteBlogPost(target)
 {
+    let targetNum = target.blogNum;
     //Remove the section in question
-    document.getElementsByTagName("section")[target].remove();
+    document.getElementsByTagName("section")[targetNum].remove();
+    //Remove blog from array
+    blogs.splice(blogs.indexOf(target),1);
     //Update all blogNums
     for (let i = 0; i < blogs.length;i++)
     {   
-        if (i < target) continue;
+        if (i < targetNum) continue;
         blogs[i].blogNum--;
     }
     //Console.log
