@@ -19,15 +19,28 @@ let blogs = [];
 let counter = 0;
 let targetEditBlog;
 //Onload function
-window.onload = loadBlogs();
-
-function loadBlogs()
-{
-    for (let i =0; i < blogs.length;i++)
+window.onload = function(){
+    let numBlogs = localStorage.getItem("NumBlogs");
+    for (let i = 0; i < numBlogs;i++)
     {
-        document.body.appendChild(blogs[i].blogElement);
+        //Append each blog to page and blogs array
+        let blog = localStorage.getItem(i);
+        document.body.appendChild(blog);
+        blogs.push(blog);
     }
 }
+
+//OnExit function
+window.onbeforeunload = function(){
+    //Store all of blogs
+    for (let i =0; i < blogs.length;i++)
+    {
+        localStorage.setItem(i,blogs[i]);
+    }
+    //Store num of blogs
+    localStorage.setItem("NumBlogs",blogs.length);
+}
+
 //Pop up to get details
 function blogPopUp()
 {
@@ -50,7 +63,6 @@ function createBlogPost()
     clon.getElementById("blogDate").innerHTML = date;
     clon.getElementById("blogSummary").innerHTML = summary;
     let currBlog = new blog(counter,clon);
-    localStorage.setItem(currBlog);
     counter++;
     blogs.push(currBlog);
     //Link this blog posts button with itself
