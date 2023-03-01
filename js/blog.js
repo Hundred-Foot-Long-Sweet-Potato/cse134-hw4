@@ -13,17 +13,21 @@ class blog{
         this.blogNum = blogNum;
         this.blogElement = blogElement;
     }
-    update(title,date,sum)
-    {
-        this.title = title;
-        this.date = date;
-        this.sum = sum;
-    }
 }
 //Javascript array with all blogs
 let blogs = [];
 let counter = 0;
 let targetEditBlog;
+//Onload function
+window.onload = loadBlogs();
+
+function loadBlogs()
+{
+    for (let i =0; i < blogs.length;i++)
+    {
+        document.body.appendChild(blogs[i].blogElement);
+    }
+}
 //Pop up to get details
 function blogPopUp()
 {
@@ -46,6 +50,7 @@ function createBlogPost()
     clon.getElementById("blogDate").innerHTML = date;
     clon.getElementById("blogSummary").innerHTML = summary;
     let currBlog = new blog(counter,clon);
+    localStorage.setItem(currBlog);
     counter++;
     blogs.push(currBlog);
     //Link this blog posts button with itself
@@ -74,6 +79,7 @@ function deleteBlogPost(target)
         if (i < targetNum) continue;
         blogs[i].blogNum--;
     }
+    localStorage.removeItem(target);
     console.log(blogs);
 }
 
