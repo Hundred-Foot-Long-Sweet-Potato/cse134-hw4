@@ -5,8 +5,10 @@ const blogDia = document.getElementById("blogCreateDialog");
 const blogConfirm = document.getElementById("blogCreate");
 blogConfirm.addEventListener("click",createBlogPost);
 
-//Javascript array to hold data
+//Javascript array with all blogs
 let blogs = [];
+let counter = 0;
+
 //Pop up to get details
 function blogPopUp()
 {
@@ -22,5 +24,15 @@ function createBlogPost()
     var clon = temp.content.cloneNode(true);
     //Fill details in template
     clon.getElementById("blogTitle").innerHTML = document.getElementById("diaTitle").value;
+    clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
+    clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
+    //Link this blog posts button with itself
+    clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(clon)});
+    //Append 
     document.body.appendChild(clon);
+}
+
+function deleteBlogPost(blog)
+{
+    blog.remove();
 }
