@@ -28,6 +28,7 @@ function createBlogPost()
     clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
     //Link this blog posts button with itself
     let blogNum = counter;
+    blogs.push(clon);
     clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(blogNum)});
     //Append 
     document.body.appendChild(clon);
@@ -35,5 +36,12 @@ function createBlogPost()
 
 function deleteBlogPost(blogNum)
 {
+    //Remove the section in question
     document.getElementsByTagName("section")[blogNum].remove();
+    //Update all blogNums
+    for (let i = 0; i < blogs.size();i++)
+    {
+        if (i < blogNum) continue;
+        blogs[i].blogNum--;
+    }
 }
