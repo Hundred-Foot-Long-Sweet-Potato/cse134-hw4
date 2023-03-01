@@ -62,7 +62,7 @@
                         <source media = "(min-width:700px)" srcset="images/Unity.svg" width="150" height="150" draggable="false">
                         <img src="images/Unity.svg" alt="Unity icon" width="100" height="100" draggable="false">
                     </picture>
-                    <p>Unity is the main game engine I use nowadays and I focus mainly on it's 2D component. I mainly focus on the scripting side
+                    <p class="Tech-Paragraph">Unity is the main game engine I use nowadays and I focus mainly on it's 2D component. I mainly focus on the scripting side
                         but since I have tried and made my own game I have experience in all aspects required in making a game in Unity.
                     </p>
                 </div>
@@ -75,7 +75,7 @@
                         <source media = "(min-width:700px)" srcset="images/Unreal.svg" width="150" height="150" draggable="false">
                         <img src="images/Unreal.svg" alt="Unreal Engine Icon" width="100" height="100" draggable="false">
                     </picture>
-                    <p>Unreal is the first game engine I really got into and I focused on the 3D side of it. I mainly used Unreal's visual scripting
+                    <p class="Tech-Paragraph">Unreal is the first game engine I really got into and I focused on the 3D side of it. I mainly used Unreal's visual scripting
                         features to code but since I have knowledge in c++ I can use that as well. While I have prototyped 2 games in Unreal
                         due to the high barriers required for 3D modeling and animation I eventually gave up on those projects.
                     </p>
@@ -84,13 +84,13 @@
             <script>
                 const techClass1 = document.getElementsByClassName("Tech")[0];
                 const techClass2 = document.getElementsByClassName("Tech")[1];
-                const techDesc1 = document.getElementsByClassName("Tech-Description")[0];
-                const techDesc2 = document.getElementsByClassName("Tech-Description")[1];
+                const techDesc1 = document.getElementsByClassName("Tech-Paragraph")[0];
+                const techDesc2 = document.getElementsByClassName("Tech-Paragraph")[1];
 
-                techClass1.addEventListener("mouseover", ()=>{expandTech(techClass1)});
-                techClass2.addEventListener("mouseover", ()=>{expandTech(techClass2)});
-                techClass1.addEventListener("mouseoff", ()=>{expandTech(techClass1)});
-                techClass2.addEventListener("mouseoff", ()=>{expandTech(techClass2)});
+                techClass1.addEventListener("mouseover", ()=>{expandTech(techDesc1)});
+                techClass2.addEventListener("mouseover", ()=>{expandTech(techDesc2)});
+                techClass1.addEventListener("mouseoff", ()=>{expandTech(techDesc1)});
+                techClass2.addEventListener("mouseoff", ()=>{expandTech(techDesc2)});
 
                 function expandTech(techBlock)
                 {
