@@ -68,18 +68,19 @@ header{
     border-color: black;
     border-width: var(--border-width);
     border-radius: 4px;
-    width: 25%;
-    height: 60%;
+    width: 15%;
+    height: 50%;
     justify-self: center;
     margin-left: 5%;
     margin-bottom: 3%;
     gap:10rem;
-    transition: width 2s,  transform 2s;
+    transition: width 2s, height 2s,  transform 2s;
 }
 
 .Tech:hover{
     background-color: white;
     width: 85%;
+    height: 60%;
 }
 
 .Tech-Description{
