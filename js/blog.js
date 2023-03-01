@@ -57,6 +57,8 @@ window.onload = function(){
 
 //OnExit function
 window.onbeforeunload = function(){
+    //Clear everything first
+    localStorage.clear();
     //Store all of blogs
     for (let i =0; i < blogs.length * 3;i++)
     {
