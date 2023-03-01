@@ -5,6 +5,11 @@ const blogDia = document.getElementById("blogCreateDialog");
 const blogConfirm = document.getElementById("blogCreate");
 blogConfirm.addEventListener("click",createBlogPost);
 
+class blog{
+    constructor(blogNum){
+        this.blogNum = blogNum;
+    }
+}
 //Javascript array with all blogs
 let blogs = [];
 let counter = 0;
@@ -26,8 +31,11 @@ function createBlogPost()
     clon.getElementById("blogTitle").innerHTML = document.getElementById("diaTitle").value;
     clon.getElementById("blogDate").innerHTML = document.getElementById("diaDate").value;
     clon.getElementById("blogSummary").innerHTML = document.getElementById("diaSummary").value;
+    let currBlog = new blog(counter);
+    counter++;
+    blogs.push(currBlog);
     //Link this blog posts button with itself
-    clon.getElementById("blogDelete").addEventListener("click",()=>{clon.parentNode.removeChild(clon);});
+    clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog.blogNum)});
     //Append 
     document.body.appendChild(clon);
 }
