@@ -43,9 +43,15 @@ window.onload = function(){
         clon.getElementById("blogTitle").innerHTML = title;
         clon.getElementById("blogDate").innerHTML = date;
         clon.getElementById("blogSummary").innerHTML = summary;
-        document.body.appendChild(clon);
         let currBlog = new blog(i,title,date,summary);
+        counter++;
+        clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(currBlog)});
+        clon.getElementById("blogEdit").addEventListener("click",()=>{
+            editBlogPost();
+            targetEditBlog = currBlog;
+        });
         blogs.push(currBlog);
+        document.body.appendChild(clon);
     }
 }
 
