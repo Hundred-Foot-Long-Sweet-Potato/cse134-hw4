@@ -29,6 +29,7 @@ function createBlogPost()
     //Link this blog posts button with itself
     let blogNum = counter;
     blogs.push(clon);
+    counter++;
     clon.getElementById("blogDelete").addEventListener("click",()=>{deleteBlogPost(blogNum)});
     //Append 
     document.body.appendChild(clon);
