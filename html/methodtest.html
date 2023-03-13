@@ -48,7 +48,7 @@
                 {
                     let xhr = new XMLHttpRequest();
                     xhr.open("POST","httpbin.org/post",true);
-                    xhr.onload = function(){handleReponse(xhr);};
+                    xhr.onload = function(){handleResponse(xhr);};
                     xhr.send(null);
                 }
 
