@@ -46,21 +46,20 @@
                 
                 function sendRequest()
                 {
-                    let xhr = new XMLHttpRequest();
-                    xhr.open("POST","httpbin.org/post",true);
-                    xhr.onload = function(){handleResponse(xhr);};
-                    xhr.send(null);
-                }
-
-                function handleResponse(xhr)
-                {
-                if (xhr.readyState == 4  && xhr.status == 200)
-                    {
-                    var parsedResponse = xhr.responseXML;
-                    var msg = parsedResponse.getElementsByTagName('message')[0].firstChild.nodeValue;
-                    var responseOutput = document.getElementById("response");
-                    responseOutput.innerHTML = msg;
-                    }
+                    fetch('https://httpbin.org/post',{
+                        method:'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: 'Test 1'
+                        })
+                    }).then(response => {
+                        return response.json()
+                    }).then(data=> console.log(data))
+                    .catch(error=> console.log('ERROR'))
+                    
+                    
                 }
                 
             </script>
