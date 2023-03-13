@@ -39,10 +39,6 @@
             <input type="button" value="putBtn" id="putButton">
             <input type="button" value="deleteBtn" id="deleteButton">
             <script type="text/javascript">
-
-                window.addEventListener('DOMContentLoaded', function() {
-                    document.getElementById("postButton").addEventListener('click', function() {sendRequest()});
-                })
                 
                 function sendRequest()
                 {
@@ -62,6 +58,10 @@
                     
                 }
                 
+                window.onload = function()
+                {
+                    document.getElementById('postButton').onclick = sendRequest;
+                };
             </script>
         </form>
         <output id="response">&nbsp;</output>
