@@ -39,8 +39,6 @@
             <input type="button" value="putBtn" id="putButton">
             <input type="button" value="deleteBtn" id="deleteButton">
             <script type="text/javascript">
-                const postBtn = document.getElementById("postButton");
-                postBtn.addEventListener('click',function(){sendRequest()})
                 
                 function sendRequest()
                 {
@@ -53,15 +51,17 @@
 
                 function handleResponse(xhr)
                 {
-                if (xhr.readyState == 4  && xhr.status == 200)
-                    {
                     var parsedResponse = xhr.responseXML;
                     var msg = parsedResponse.getElementsByTagName('message')[0].firstChild.nodeValue;
                     var responseOutput = document.getElementById("response");
                     responseOutput.innerHTML = msg;
-                    }
+                    
                 }
                 
+                window.onload = function()
+                {
+                    document.getElementById('postButton').onclick = sendRequest;
+                };
             </script>
         </form>
         <output id="response">&nbsp;</output>
