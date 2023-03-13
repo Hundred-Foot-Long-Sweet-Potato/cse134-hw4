@@ -51,7 +51,7 @@
                     }).then(response => {
                         return response.json()
                     }).then(data=> {
-                        document.getElementById('response').innerHTML = data;
+                        document.getElementById('response').innerHTML = data.json.RecordID;
                         console.log(data);
                     })
                     .catch(error=> console.log('ERROR'))
