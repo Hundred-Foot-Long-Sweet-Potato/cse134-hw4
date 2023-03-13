@@ -75,9 +75,6 @@
                     }).then(response => {
                         return response.json()
                     }).then(data => {
-                        let output = "";
-                        document.getElementById('response').value =
-                         `RecordID:${data.json.recordID}\n  Article Name:${data.json.articleName}\n  ArticleBody:${data.json.articleBody}\n  Date:${data.json.date}`;
                         console.log(data);
                     })
                     .catch(error=> console.log('ERROR'))
