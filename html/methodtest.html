@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset="utf-8" >
+	<meta name="description" content="Simple demo Web page for CSE 134B" >
+	<meta name="keywords" content="HTML, CSS, JavaScript" >
+	<meta name="author" content="" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<title>Personal Portfolio Website</title>
+    <link href="images/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="images/landscapeImage.jpg" alt="Placeholder art" draggable="false" id="banner-img">
+        <h1>Eric Chen's Portfolio</h1>
+        <nav class="nav">
+            <a href="../index.html" >Home Page</a>
+            <a href="html/Projects.html" >Projects</a>
+            <a href="html/Experiment.html" >Experiment</a>
+            <a href="nativedialogs.html"> nativedialogs</a>
+            <a href="html/crud.html"> crud</a>
+            <a href="html/styledCrud.html"> Styledcrud</a>
+        </nav>
+    </header>
+    <body>
+        <form>
+            <label for="record">Record ID: </label>
+            <input type="number" id="record" name="record"/>
+            <label for="articleName">Article Name: </label>
+            <input type="text" id="articleName" name="articleName"/>
+            <label for="articleBody">Content: </label>
+            <textarea id="articleBody" name="articleBody"></textarea>
+            <input type="button" value="postBtn" id="postButton">
+            <input type="button" value="getBtn" id="getButton">
+            <input type="button" value="putBtn" id="putButton">
+            <input type="button" value="deleteBtn" id="deleteButton">
+            <script type="text/javascript">
+
+                window.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById("postButton").addEventListener('click', function() {sendRequest()});
+                })
+                
+                function sendRequest()
+                {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open("POST","httpbin.org/post",true);
+                    xhr.onload = function(){handleReponse(xhr);};
+                    xhr.send(null);
+                }
+
+                function handleResponse(xhr)
+                {
+                if (xhr.readyState == 4  && xhr.status == 200)
+                    {
+                    var parsedResponse = xhr.responseXML;
+                    var msg = parsedResponse.getElementsByTagName('message')[0].firstChild.nodeValue;
+                    var responseOutput = document.getElementById("response");
+                    responseOutput.innerHTML = msg;
+                    }
+                }
+                
+            </script>
+        </form>
+        <output id="response">&nbsp;</output>
+    </body>
+</body>
+
+</html>
