@@ -55,8 +55,8 @@
                     }).then(response => {
                         return response.json()
                     }).then(data=> {
-                        let output = '';
-                        document.getElementById('response').innerHTML = output.append(data.json.recordID, "\n",data.json.articleName, "\n",data.json.articleBody, "\n",data.json.date);
+                        let output = "";
+                        document.getElementById('response').innerHTML = output.concat(data.json.recordID, "\n",data.json.articleName, "\n",data.json.articleBody, "\n",data.json.date);
                         console.log(data.json);
                     })
                     .catch(error=> console.log('ERROR'))
