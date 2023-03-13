@@ -39,13 +39,12 @@
             <input type="button" value="putBtn" id="putButton">
             <input type="button" value="deleteBtn" id="deleteButton">
             <script type="text/javascript">
-
-                window.addEventListener('DOMContentLoaded', function() {
-                    document.getElementById("postButton").addEventListener('click', function() {sendRequest()});
-                })
+                const postBtn = document.getElementById("postButton");
+                postBtn.addEventListener('click',function(){sendRequest()})
                 
                 function sendRequest()
                 {
+                    console.log("Sending Request!");
                     let xhr = new XMLHttpRequest();
                     xhr.open("POST","httpbin.org/post",true);
                     xhr.onload = function(){handleResponse(xhr);};
