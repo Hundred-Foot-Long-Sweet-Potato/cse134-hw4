@@ -40,19 +40,23 @@
                 
                 function sendRequest()
                 {
+                    let time = new Date();
                     fetch('https://httpbin.org/post',{
                         method:'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
-                            RecordID: document.getElementById('record').value
+                            recordID: document.getElementById('record').value,
+                            articleName: document.getElementById('articleName').value,
+                            articleBody: document.getElementById('articleBody').value,
+                            date: time
                         })
                     }).then(response => {
                         return response.json()
                     }).then(data=> {
-                        document.getElementById('response').innerHTML = data.json.RecordID;
-                        console.log(data);
+                        document.getElementById('response').innerHTML = data.json;
+                        console.log(data.json);
                     })
                     .catch(error=> console.log('ERROR'))
                 }
