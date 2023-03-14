@@ -11,7 +11,7 @@ class ButtonCount extends HTMLElement {
         super();
         this.attachShadow({mode:'open'});
         //Attach a button that counts
-        this.shadowRoot.innerHTML = '<button id="buttonClick" value="Times Clicked: 0">'
+        this.shadowRoot.innerHTML = '<input type="button" id="buttonClick" value="Times Clicked: 0">'
         document.getElementById('buttonClick').addEventListener('click', UpdateButton);
     }
 }
