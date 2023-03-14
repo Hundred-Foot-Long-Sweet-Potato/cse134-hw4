@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script type="module" src="../js/Method.js"></script>
 </head>
 <body>
     <header>
@@ -36,92 +37,6 @@
             <input type="button" value="getBtn" id="getButton">
             <input type="button" value="putBtn" id="putButton">
             <input type="button" value="deleteBtn" id="deleteButton">
-            <script type="text/javascript">
-                
-                function sendRequest()
-                {
-                    let time = new Date();
-                    fetch('https://httpbin.org/post',{
-                        method:'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            recordID: document.getElementById('record').value,
-                            articleName: document.getElementById('articleName').value,
-                            articleBody: document.getElementById('articleBody').value,
-                            date: time
-                        })
-                    }).then(response => {
-                        return response.json()
-                    }).then(data=> {
-                        let output = "";
-                        //Must reformat into a nicer to see reponse
-                        document.getElementById('response').value = `Data Placed!:\nRecordID:${data.json.recordID}\nArticle Name:${data.json.articleName}\nArticleBody:${data.json.articleBody}\nDate:${data.json.date}`;
-                        console.log(data.json);
-                    })
-                    .catch(error=> console.log('POST ERROR'))
-                }
-
-                function getRequest()
-                {
-                    //Empty body because I don't want any data
-                    fetch('https://httpbin.org/get')
-                    .then(response => {
-                        return response.json()
-                    }).then(data => {
-                        document.getElementById('response').value = `This endpoint has like no data so here is your origin:\nOrigin:${data.origin}`;
-                        console.log(data);
-
-                    })
-                    .catch(error=> console.log('GET ERROR'))
-                }
-
-                function putRequest()
-                {
-                    let time = new Date();
-                    //PUT is supposed to replace duplicates but since time is a value this pretty much never happens
-                    fetch('https://httpbin.org/put',{
-                        method:'PUT',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            recordID: document.getElementById('record').value,
-                            articleName: document.getElementById('articleName').value,
-                            articleBody: document.getElementById('articleBody').value,
-                            date: time
-                        })
-                    }).then(response => {
-                        return response.json()
-                    }).then(data => {
-                        document.getElementById('response').value = `Data Placed!:\nRecordID:${data.json.recordID}\nArticle Name:${data.json.articleName}\nArticleBody:${data.json.articleBody}\nDate:${data.json.date}`;
-                        console.log(data);
-                    })
-                    .catch(error=> console.log('GET ERROR'))
-                }
-
-                function deleteRequest()
-                {
-                    fetch('https://httpbin.org/delete',{
-                        method:'DELETE',
-                    }).then(response => {
-                       return response.json()
-                    }).then(data =>{
-                        console.log(data);
-                    })
-                    .catch(error=> console.log('DELETE ERROR'))
-                
-                }
-                
-                window.onload = function()
-                {
-                    document.getElementById('postButton').onclick = sendRequest;
-                    document.getElementById('getButton').onclick = getRequest;
-                    document.getElementById('putButton').onclick = putRequest;
-                    document.getElementById('deleteButton').onclick = deleteRequest;
-                };
-            </script>
         </form>
         <textarea id="response" style="border: none; outline: none; resize:none; height:800px; width: 500px;"></textarea>
     </body>
