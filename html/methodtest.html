@@ -57,14 +57,13 @@
                     }).then(data=> {
                         let output = "";
                         //Must reformat into a nicer to see reponse
-                        document.getElementById('response').value = JSON.stringify(data);
-                        //`RecordID:${data.json.recordID}\n  Article Name:${data.json.articleName}\n  ArticleBody:${data.json.articleBody}\n  Date:${data.json.date}`;
+                        document.getElementById('response').value = `Data Placed!: \nRecordID:${data.json.recordID}\n  Article Name:${data.json.articleName}\n  ArticleBody:${data.json.articleBody}\n  Date:${data.json.date}`;
                         console.log(data.json);
                     })
-                    .catch(error=> console.log('ERROR'))
+                    .catch(error=> console.log('POST ERROR'))
                 }
 
-                function putRequest()
+                function getRequest()
                 {
                     let time = new Date();
                     //Empty body because I don't want any data
@@ -80,17 +79,17 @@
                         console.log(data);
 
                     })
-                    .catch(error=> console.log('ERROR'))
+                    .catch(error=> console.log('GET ERROR'))
                 }
                 
                 window.onload = function()
                 {
                     document.getElementById('postButton').onclick = sendRequest;
-                    document.getElementById('getButton').onclick = putRequest;
+                    document.getElementById('getButton').onclick = getRequest;
                 };
             </script>
         </form>
-        <textarea id="response"></textarea>
+        <textarea id="response" row="5" cols="40" style="border: none; outline: none; resize:none;"></textarea>
     </body>
 </body>
 
