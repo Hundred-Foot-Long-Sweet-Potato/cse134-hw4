@@ -66,12 +66,8 @@
                 function getRequest()
                 {
                     //Empty body because I don't want any data
-                    fetch('https://httpbin.org/get',{
-                        method:'GET',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }).then(response => {
+                    fetch('https://httpbin.org/get')
+                    .then(response => {
                         return response.json()
                     }).then(data => {
                         document.getElementById('response').value = `This endpoint has like no data so here is your origin:\nOrigin:${data.origin}`;
@@ -104,12 +100,27 @@
                     })
                     .catch(error=> console.log('GET ERROR'))
                 }
+
+                function deleteRequest()
+                {
+                    fetch('https://httpbin.org/put',{
+                        method:'DELETE  ',
+                    }).then(response => {
+                        return response.json()
+                    }).then(data => {
+                        document.getElementById('response').value = `Delete`;
+                        console.log(data);
+                    })
+                    .catch(error=> console.log('GET ERROR'))
+                
+                }
                 
                 window.onload = function()
                 {
                     document.getElementById('postButton').onclick = sendRequest;
                     document.getElementById('getButton').onclick = getRequest;
                     document.getElementById('putButton').onclick = putRequest;
+                    document.getElementById('deleteButton').onclick = deleteRequest;
                 };
             </script>
         </form>
