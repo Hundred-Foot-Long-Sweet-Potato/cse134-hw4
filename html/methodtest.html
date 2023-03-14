@@ -103,7 +103,7 @@
 
                 function deleteRequest()
                 {
-                    fetch('https://httpbin.org/put',{
+                    fetch('https://httpbin.org/delete',{
                         method:'DELETE  ',
                     }).then(response => {
                         return response.json()
@@ -111,7 +111,7 @@
                         document.getElementById('response').value = `Delete`;
                         console.log(data);
                     })
-                    .catch(error=> console.log('GET ERROR'))
+                    .catch(error=> console.log('DELETE ERROR'))
                 
                 }
                 
