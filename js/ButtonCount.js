@@ -4,7 +4,7 @@ class ButtonCount extends HTMLElement {
     UpdateButton()
     {
         this.timesClicked += 1;
-        this.shadowRoot.getElementById('buttonClick') = `Times Clicked: ${this.timesClicked}`;
+        this.shadowRoot.getElementById('buttonClick').value = `Times Clicked: ${this.timesClicked}`;
     }
 
     constructor() {
