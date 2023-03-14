@@ -85,7 +85,7 @@
                 {
                     let time = new Date();
                     //PUT is supposed to replace duplicates but since time is a value this pretty much never happens
-                    fetch('https://httpbin.org/get',{
+                    fetch('https://httpbin.org/put',{
                         method:'PUT',
                         headers: {
                             'Content-Type': 'application/json'
@@ -113,7 +113,7 @@
                 };
             </script>
         </form>
-        <textarea id="response" row="5" cols="40" style="border: none; outline: none; resize:none; height:20%; width: 60%;"></textarea>
+        <textarea id="response" style="border: none; outline: none; resize:none; height:800px; width: 500px;"></textarea>
     </body>
 </body>
 
