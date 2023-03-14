@@ -106,10 +106,8 @@
                     fetch('https://httpbin.org/delete',{
                         method:'DELETE  ',
                     }).then(response => {
-                        return response.json()
-                    }).then(data => {
-                        document.getElementById('response').value = `Delete`;
-                        console.log(data);
+                        console.log(response);
+                        document.getElementById('response').value = `${response.status}`;
                     })
                     .catch(error=> console.log('DELETE ERROR'))
                 
