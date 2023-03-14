@@ -56,6 +56,7 @@
                         return response.json()
                     }).then(data=> {
                         let output = "";
+                        //Must reformat into a nicer to see reponse
                         document.getElementById('response').value = JSON.stringify(data);
                         //`RecordID:${data.json.recordID}\n  Article Name:${data.json.articleName}\n  ArticleBody:${data.json.articleBody}\n  Date:${data.json.date}`;
                         console.log(data.json);
@@ -89,7 +90,7 @@
                 };
             </script>
         </form>
-        <output id="response">&nbsp;</output>
+        <textarea id="response"></textarea>
     </body>
 </body>
 
