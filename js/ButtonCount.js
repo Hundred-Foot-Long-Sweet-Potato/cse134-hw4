@@ -1,12 +1,6 @@
 
 class ButtonCount extends HTMLElement {
     
-    UpdateButton()
-    {
-        this.timesClicked += 1;
-        this.shadowRoot.getElementById('buttonClick').value = `Times Clicked: ${this.timesClicked}`;
-    }
-
     constructor() {
         super();
         this.timesClicked = 0;
@@ -15,6 +9,13 @@ class ButtonCount extends HTMLElement {
         this.shadowRoot.innerHTML = '<input type="button" id="buttonClick" value="Times Clicked: 0">'
         this.shadowRoot.getElementById('buttonClick').addEventListener('click', this.UpdateButton);
     }
+    
+    UpdateButton()
+    {
+        this.timesClicked += 1;
+        this.shadowRoot.getElementById('buttonClick').value = `Times Clicked: ${this.timesClicked}`;
+    }
+
 
 }
 
